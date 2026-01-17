@@ -19,7 +19,7 @@ export default defineConfig({
         orientation: 'portrait',
         icons: [
           {
-            src: '/icons/icon-192x192.svg',
+            src: 'icons/icon-192x192.svg',
             sizes: '192x192',
             type: 'image/svg+xml',
             purpose: 'any maskable'
