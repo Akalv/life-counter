@@ -3,7 +3,7 @@ const ICONS = [
   '💻', '📝', '🎵', '📸', '✈️', '🚴', '🏊', '🎮',
   '📱', '💰', '🎁', '🌟', '🔥', '💎', '🌈', '🚀',
   '❤️', '🌺', '🌸', '🌻', '🍀', '🌲', '⭐', '🌙',
-  '☀️', '🌊', '🏔️', '🏠', '🚗', '✈️', '🚂', '🚢'
+  '☀️', '🌊', '🏔️', '🏠', '🚗', '🚂', '🚢'
 ]
 
 const COLORS = [
@@ -17,6 +17,7 @@ export default function IconPicker({ selectedIcon, onSelect }) {
     <div className="grid grid-cols-6 gap-2">
       {ICONS.map(icon => (
         <button
+          type="button"
           key={icon}
           onClick={() => onSelect(icon)}
           className={`text-3xl p-2 rounded-lg transition ${
@@ -37,6 +38,7 @@ export function ColorPicker({ selectedColor, onSelect }) {
     <div className="grid grid-cols-5 gap-2">
       {COLORS.map(color => (
         <button
+          type="button"
           key={color}
           onClick={() => onSelect(color)}
           className={`w-10 h-10 rounded-full transition ${

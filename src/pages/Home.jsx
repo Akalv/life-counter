@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate, useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import CounterForm from '../components/CounterForm'
 import CounterCard from '../components/CounterCard'
@@ -125,7 +125,6 @@ export default function Home() {
 }
 
 function CounterDetailPage({ counters, deleteCounter }) {
-  const { useParams, useNavigate } = require('react-router-dom')
   const navigate = useNavigate()
   const { id } = useParams()
   const counter = counters.find(c => c.id === id)
