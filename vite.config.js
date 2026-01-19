@@ -10,9 +10,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'icons/icon-192x192.svg'],
       manifest: {
-        name: 'Life Fun! Habit Tracker',
-        short_name: 'Life Fun!',
-        description: 'Track habits with joy and celebrate achievements!',
+        name: 'Life Recorder',
+        short_name: 'Life Recorder',
+        description: 'Record every meaningful moment and track your life achievements!',
         theme_color: '#FF6B6B',
         background_color: '#ffffff',
         display: 'standalone',
