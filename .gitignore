@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# OpenCode configs
+restore*.sh
+
+# Test/Report files
+TEST_*.md
