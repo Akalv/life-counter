@@ -65,10 +65,20 @@ export default function Dashboard() {
             records.map(record => {
               const today = new Date().toISOString().split('T')[0]
               const todayCurrent = record.dailyProgress[today]?.current || 0
+              // 计算总完成数（所有日期的完成次数总和，不是完成天数）
+              const totalCompletions = Object.values(record.dailyProgress || {})
+                .reduce((sum, day) => sum + (day.current || 0), 0)
               return (
                 <div key={record.id} className="record-item">
                   <div className="record-info">
-                    <div className="record-title">{record.title}</div>
+                    {/* 标题 + 总完成数标签同行显示 */}
+                    <div className="record-header">
+                      <span className="record-title">{record.title}</span>
+                      {/* 只有完成数 > 0 时才显示标签 */}
+                      {totalCompletions > 0 && (
+                        <span className="record-total-badge">🏆{totalCompletions}</span>
+                      )}
+                    </div>
                     <div className="record-count">{todayCurrent}/{record.target}</div>
                   </div>
                   <div className="counter-controls">
