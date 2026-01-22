@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { generateId } from '../utils/uuid'
 
 const RECORDS_KEY = 'life_records_data'
 
@@ -120,7 +121,7 @@ export function useRecords() {
   }, [records, stats, achievements])
 
   const createRecord = (title, target) => {
-    const id = title.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-').replace(/-+/g, '-')
+    const id = generateId()
     const newRecord = {
       id: id,
       title: title,
